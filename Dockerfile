@@ -14,6 +14,8 @@ RUN apk upgrade --update &&\
    curl https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz | tar xzf - -C / && \
    mv /go /goroot
 
+RUN apk add --update bash && rm -rf /var/cache/apk/*
+
 ENV GOROOT=/goroot \
       GOPATH=/gopath \
       GOBIN=/gopath/bin \
